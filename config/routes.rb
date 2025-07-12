@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root "pages#home"
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+    root 'pages#home'
+    get 'about', to: 'pages#about'
+    resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+    get 'signup', to: 'users#new'
+    resources :users, except: [:new]
 end
