@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-has_many :articles
+    has_secure_password
+    has_many :articles
 end
